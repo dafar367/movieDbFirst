@@ -5,9 +5,13 @@
       <map>
         <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/activity_card_now_playing.xml" value="0.1" />
         <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/activity_main_menu.xml" value="0.22" />
         <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/activity_movie_detail.xml" value="0.2786458333333333" />
         <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/activity_now_playing.xml" value="0.1" />
-        <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/card_now.xml" value="0.25" />
+        <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/card_now.xml" value="0.13513513513513514" />
+        <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/fragment_now_playing.xml" value="0.17806484295845998" />
+        <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/layout/fragment_up_coming.xml" value="0.17806484295845998" />
+        <entry key="..\:/AndroidStudio/movieDb/app/src/main/res/menu/main_menu.xml" value="0.21" />
       </map>
     </option>
   </component>

@@ -5,7 +5,7 @@
     android:id="@+id/cons_act_now_playing"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.nowPlayingActivity">
+    tools:context=".view.activities.nowPlayingActivity">
 
   <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/rv_nowPlaying"

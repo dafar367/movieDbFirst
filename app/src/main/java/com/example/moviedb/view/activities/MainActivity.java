@@ -1,10 +1,9 @@
-package com.example.moviedb.view;
+package com.example.moviedb.view.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -17,8 +16,6 @@ import com.example.moviedb.helper.Const;
 import com.example.moviedb.model.Movies;
 import com.example.moviedb.viewmodel.movieViewViewModel;
 import com.google.android.material.textfield.TextInputLayout;
-
-import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 

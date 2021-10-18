@@ -15,14 +15,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieDb">
         <activity
-            android:name=".view.movieDetail"
+            android:name=".view.activities.nowPlayingActivity"
             android:exported="true" />
         <activity
-            android:name=".view.MainActivity"
-
+            android:name=".view.activities.movieDetail"
             android:exported="true" />
         <activity
-            android:name=".view.nowPlayingActivity"
+            android:name=".view.activities.MainActivity"
+            android:exported="true" />
+        <activity
+            android:name=".view.MainMenuActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

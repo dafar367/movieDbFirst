@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".view.movieDetail">
+    tools:context=".view.activities.movieDetail">
 
     <androidx.cardview.widget.CardView
         android:layout_width="409dp"
