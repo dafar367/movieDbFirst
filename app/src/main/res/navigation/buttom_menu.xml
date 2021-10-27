@@ -6,10 +6,25 @@
     app:startDestination="@id/nowPlayingFragment">
 
     <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.moviedb.view.fragments.movieDetailFragment"
+        android:label="@string/now_playing"
+        tools:layout="@layout/fragment_movie_detail" >
+        <argument
+            android:name="movieId"
+            app:argType="string"
+            android:defaultValue="null" />
+    </fragment>
+
+    <fragment
         android:id="@+id/nowPlayingFragment"
         android:name="com.example.moviedb.view.fragments.nowPlayingFragment"
         android:label="@string/now_playing"
-        tools:layout="@layout/fragment_now_playing" />
+        tools:layout="@layout/fragment_now_playing" >
+        <action
+            android:id="@+id/action_nowPlayingFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" />
+    </fragment>
     <fragment
         android:id="@+id/upComingFragment"
         android:name="com.example.moviedb.view.fragments.upComingFragment"

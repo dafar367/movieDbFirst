@@ -2,6 +2,7 @@ package com.example.moviedb.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
@@ -49,12 +51,18 @@ public class nowPlayingAdapter extends RecyclerView.Adapter<nowPlayingAdapter.no
         Glide.with(context)
                 .load(Const.IMAGE_URL+resultsDTO.getPoster_path())
                 .into(holder.img_poster);
+
+        //ini di command
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, movieDetail.class);
-                intent.putExtra("movie_id", ""+resultsDTO.getId());
-                context.startActivity(intent);
+//                Intent intent = new Intent(context, movieDetail.class);
+//                intent.putExtra("movie_id", ""+resultsDTO.getId());
+//                context.startActivity(intent);
+
+                Bundle bundle = new Bundle();
+                bundle.putString("movieId", ""+resultsDTO.getId());
+                Navigation.findNavController(view).navigate(R.id.action_nowPlayingFragment_to_movieDetailFragment, bundle);
             }
         });
     }
