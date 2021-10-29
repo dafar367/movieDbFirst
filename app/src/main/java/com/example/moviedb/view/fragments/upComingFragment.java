@@ -3,12 +3,19 @@ package com.example.moviedb.view.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.example.moviedb.R;
+import com.example.moviedb.adapter.upComingAdapter;
+import com.example.moviedb.model.upComing;
+import com.example.moviedb.viewmodel.movieViewViewModel;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -57,10 +64,28 @@ public class upComingFragment extends Fragment {
         }
     }
 
+    private RecyclerView rv_upcoming_fragment;
+    private movieViewViewModel viewModel;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_up_coming, container, false);
+        View view = inflater.inflate(R.layout.fragment_up_coming, container, false);
+        rv_upcoming_fragment = view.findViewById(R.id.rv_upComing_fragment);
+        viewModel = new ViewModelProvider(getActivity()).get(movieViewViewModel.class);
+        viewModel.getUpComing();
+        viewModel.getResultUpComing().observe(getActivity(), showUpComing);
+        return view;
     }
+
+    private Observer<upComing> showUpComing = new Observer<upComing>() {
+        @Override
+        public void onChanged(upComing upComing) {
+            rv_upcoming_fragment.setLayoutManager(new LinearLayoutManager(getActivity()));
+            upComingAdapter adapter = new upComingAdapter(getActivity());
+            adapter.setListUpcoming(upComing.getResults());
+            rv_upcoming_fragment.setAdapter(adapter);
+        }
+    };
 }

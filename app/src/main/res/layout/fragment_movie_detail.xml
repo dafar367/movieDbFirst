@@ -2,19 +2,87 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cons_fragment_movie_detail"
+    android:id="@+id/cons_detail"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.fragments.movieDetailFragment" >
+    android:background="@color/white"
+    tools:context=".view.activities.movieDetail">
 
-    <TextView
-        android:id="@+id/lbl_movie_id"
-        android:layout_width="wrap_content"
+    <ImageView
+        android:id="@+id/img_backdrop_detail"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="TextView"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@tools:sample/avatars" />
+
+    <ImageView
+        android:id="@+id/img_poster_movieDetail"
+        android:layout_width="142dp"
+        android:layout_height="151dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="-20dp"
+        android:elevation="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_backdrop_detail"
+        app:srcCompat="@android:drawable/ic_menu_gallery" />
+
+    <TextView
+        android:id="@+id/lbl_title_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="@color/teal_700"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movieDetail"
+        app:layout_constraintTop_toBottomOf="@+id/img_backdrop_detail" />
+
+    <TextView
+        android:id="@+id/lbl_overview_detail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="TextView"
+        android:textColor="@color/teal_200"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/img_poster_movieDetail" />
+
+    <TextView
+        android:id="@+id/lbl_rating_detail"
+        android:layout_width="0dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:text="TextView"
+        android:textColor="@color/teal_200"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/img_poster_movieDetail"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_title_detail" />
+
+    <HorizontalScrollView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lbl_overview_detail">
+
+        <LinearLayout
+            android:id="@+id/ll_movieProduction_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal" />
+    </HorizontalScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

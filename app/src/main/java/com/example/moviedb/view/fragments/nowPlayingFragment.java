@@ -76,7 +76,7 @@ public class nowPlayingFragment extends Fragment {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_now_playing, container, false);
 
-        rv_now_playing = view.findViewById(R.id.rv_nowPlaying);
+        rv_now_playing = view.findViewById(R.id.rv_now_playing_fragment);
         viewModel = new ViewModelProvider(getActivity()).get(movieViewViewModel.class);
         viewModel.getNowPlaying();
         viewModel.getResultNowPlaying().observe(getActivity(), showNowPlaying);

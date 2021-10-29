@@ -51,8 +51,6 @@ public class nowPlayingAdapter extends RecyclerView.Adapter<nowPlayingAdapter.no
         Glide.with(context)
                 .load(Const.IMAGE_URL+resultsDTO.getPoster_path())
                 .into(holder.img_poster);
-
-        //ini di command
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
