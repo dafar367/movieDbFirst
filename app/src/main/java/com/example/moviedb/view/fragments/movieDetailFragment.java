@@ -70,11 +70,12 @@ public class movieDetailFragment extends Fragment {
         }
     }
 
-    private TextView lbl_movie_title,lbl_movie_overview,lbl_movie_rating;
+    private TextView lbl_movie_title,lbl_movie_overview,lbl_movie_rating,lbl_tagline,lbl_realeseDate,lbl_genres;
     private String movie_id = "";
     private movieViewViewModel viewModel;
     private ImageView img_poster,image_backdrop;
     private LinearLayout ll_production;
+    private String movGen;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -91,6 +92,9 @@ public class movieDetailFragment extends Fragment {
         lbl_movie_overview = view.findViewById(R.id.lbl_overview_detail);
         lbl_movie_rating = view.findViewById(R.id.lbl_rating_detail);
         ll_production = view.findViewById(R.id.ll_movieProduction_detail);
+        lbl_tagline = view.findViewById(R.id.lbl_tagline_detail);
+        lbl_realeseDate = view.findViewById(R.id.lbl_realeseDate_detail);
+        lbl_genres = view.findViewById(R.id.lbl_genre_detail);
 
         viewModel.getMovieById(movie_id);
         viewModel.getResultGetMovieById().observe(getActivity(), showResultMovie);
@@ -110,6 +114,16 @@ public class movieDetailFragment extends Fragment {
             lbl_movie_title.setText(movies.getTitle());
             lbl_movie_overview.setText(movies.getOverview());
             lbl_movie_rating.setText(""+movies.getVote_average());
+            lbl_tagline.setText(movies.getTagline());
+            lbl_realeseDate.setText(movies.getRelease_date());
+
+            for (int i = 1; i<movies.getGenres().size();i++){
+                if (i == movies.getGenres().size()){
+                    movGen=movies.getGenres().get(i).getName();
+                }else {
+                    movGen=movies.getGenres().get(i).getName()+", ";
+                }
+            }
 
             for(int i = 0; i < movies.getProduction_companies().size();i++){
                 ImageView img_prod = new ImageView(ll_production.getContext());
@@ -133,6 +147,8 @@ public class movieDetailFragment extends Fragment {
                     }
                 });
             }
+
+            lbl_genres.setText(movGen);
         }
     };
 
